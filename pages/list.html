@@ -1,0 +1,48 @@
+<style>
+    .lds-circle {
+  display: inline-block;
+  transform: translateZ(1px);
+}
+.lds-circle > div {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  background: #000;
+  animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+@keyframes lds-circle {
+  0%, 100% {
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+  }
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(1800deg);
+    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+  }
+  100% {
+    transform: rotateY(3600deg);
+  }
+}
+
+</style>
+<h1>{{title}}</h1>
+<div ng-if="isLoading" class="lds-circle"><div></div></div>
+<table>
+  <a href="#!/add"><button>Thêm mới</button></a>
+  <thead>
+    <tr><th>ID</th> <th>Name</th> <th>Hanh dong</th> </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="pt in nguoi_dung">
+      <td>{{pt.id}}</td>
+      <td>{{pt.name}}</td>
+      <!-- <td ng-click="onEdit(pt.id)">Sua</td> -->
+      <td><a href="#!/edit/{{pt.id}}">Chinh sua</a></td>
+      <td ng-click="onDelete(pt.id)">Xoa</td>
+    </tr>
+  </tbody>
+</table>
