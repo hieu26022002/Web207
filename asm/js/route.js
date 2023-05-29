@@ -2,24 +2,33 @@ var app = angular.module(
     'asm',
     ['ngRoute']
 );
-app.config(function ($routeProvider) {
+
+// Controller
+
+app.config(function ($routeProvider, $locationProvider) {
+
+    $locationProvider.hashPrefix("")
+
     $routeProvider
         .when('/', {
             templateUrl: './pages/home.html',
             // controller: HomeController
         })
-        .when('/ds-nguoi-dung', {
-            templateUrl: './pages/list.html',
+        .when('/products', {
+            templateUrl: './pages/shop.html',
             // controller: ListController
         })
-        .when('/add', {
-            templateUrl: './pages/add.html',
+        .when('/product/:ma', {
+            templateUrl: './pages/detail.html',
             // controller: AddController
         })
         // :id thể hiện là có thể nhận được id là 1 giá trị nào đó
         .when('/edit/:id', {
             templateUrl: './pages/edit.html',
             // controller: EditController
+        })
+        .when('/contact',{
+            templateUrl: './pages/contact.html'
         })
         .when('/404', {
             templateUrl: './pages/404.html',
