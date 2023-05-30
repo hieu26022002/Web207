@@ -30,6 +30,12 @@ app.config(function ($routeProvider, $locationProvider) {
         .when('/contact',{
             templateUrl: './pages/contact.html'
         })
+        .when('/checkout',{
+            templateUrl: './pages/checkout.html'
+        })
+        .when('/cart',{
+            templateUrl: './pages/cart.html'
+        })
         .when('/404', {
             templateUrl: './pages/404.html',
         })

@@ -1,0 +1,54 @@
+{
+    "users": [],
+    "products": [
+        {
+            "id": 1,
+            "name": "",
+            "price": 150,
+            "overview": "",
+            "description": ""
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "name": "Dress"
+        },
+        {
+            "id": 2,
+            "name": "Shirts"
+        },
+        {
+            "id": 3,
+            "name": "Jeans"
+        },
+        {
+            "id":4,
+            "name":"Shoes"
+        },
+        {
+            "id":5,
+            "name":"Blazers"
+        },
+        {
+            "id":6,
+            "name":"Jackets"
+        },
+        {
+            "id":7,
+            "name":"Swimwear"
+        },
+        {
+            "id":8,
+            "name":"Sleepwear"
+        },
+        {
+            "id":9,
+            "name":"Sportswear"
+        },
+        {
+            "id":10,
+            "name":"Jumpsuits"
+        }
+    ]
+}
