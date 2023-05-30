@@ -30,13 +30,13 @@
 
 <body ng-app="asm" ng-controller="myController">
 
-    <div ng-include="layoutTemplate"></div>
+    <!-- <div ng-include="layoutTemplate"></div>
 
-    <div ng-view></div>
+    <div ng-view></div> -->
 
 
-    <!-- <header>
-        <div ng-include="'layouts/HeaderClient.html'"></div>
+    <header>
+        <div ng-include="'layouts/client/HeaderClient.html'"></div>
     </header>
 
     <main>
@@ -44,8 +44,8 @@
     </main>
 
     <footer>
-        <div ng-include="'layouts/FooterClient.html'"></div>
-    </footer> -->
+        <div ng-include="'layouts/client/FooterClient.html'"></div>
+    </footer>
 
     <script>
         var API_URL = 'http://localhost:3000';
@@ -79,7 +79,7 @@
     <script src="mail/contact.js"></script>
 
     <!-- Template Javascript -->
-    <script src="./js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

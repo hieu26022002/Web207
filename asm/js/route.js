@@ -11,30 +11,40 @@ app.config(function ($routeProvider, $locationProvider) {
 
     $routeProvider
         .when('/', {
-            templateUrl: './pages/home.html',
+            templateUrl: './pages/client/home.html',
             // controller: HomeController
+            layout: './pages/client/client.html'
         })
         .when('/products', {
-            templateUrl: './pages/shop.html',
+            templateUrl: './pages/client/shop.html',
             // controller: ListController
+            layout: './pages/client/client.html'
         })
         .when('/product/:ma', {
-            templateUrl: './pages/detail.html',
+            templateUrl: './pages/client/detail.html',
             // controller: AddController
+            layout: './pages/client/client.html'
         })
         // :id thể hiện là có thể nhận được id là 1 giá trị nào đó
         .when('/edit/:id', {
-            templateUrl: './pages/edit.html',
+            templateUrl: './pages/client/edit.html',
             // controller: EditController
+            layout: './pages/client/client.html'
         })
-        .when('/contact',{
-            templateUrl: './pages/contact.html'
+        .when('/contact', {
+            templateUrl: './pages/client/contact.html',
+            layout: './pages/client/client.html'
         })
-        .when('/checkout',{
-            templateUrl: './pages/checkout.html'
+        .when('/checkout', {
+            templateUrl: './pages/client/checkout.html',
+            layout: './pages/client/client.html'
         })
-        .when('/cart',{
-            templateUrl: './pages/cart.html'
+        .when('/cart', {
+            templateUrl: './pages/client/cart.html',
+            layout: './pages/client/client.html'
+        })
+        .when('/admin', {
+            layout: './pages/admin/admin.html'
         })
         .when('/404', {
             templateUrl: './pages/404.html',
@@ -44,4 +54,16 @@ app.config(function ($routeProvider, $locationProvider) {
             //redirectTo: Chuyển tới URL
             redirectTo: '/404'
         })
+});
+
+app.controller('myController', function ($scope, $location) {
+    $scope.layoutTemplate = 'clientLayout.html';
+
+    $scope.$on('$routeChangeStart', function (event, next, current) {
+        if (next.$$route && next.$$route.layout) {
+            $scope.layoutTemplate = next.$$route.layout;
+        } else {
+            $scope.layoutTemplate = 'clientLayout.html';
+        }
+    });
 });
