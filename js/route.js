@@ -57,13 +57,13 @@ app.config(function ($routeProvider, $locationProvider) {
 });
 
 app.controller('myController', function ($scope, $location) {
-    $scope.layoutTemplate = 'clientLayout.html';
+    $scope.layoutTemplate = 'client.html';
 
     $scope.$on('$routeChangeStart', function (event, next, current) {
         if (next.$$route && next.$$route.layout) {
             $scope.layoutTemplate = next.$$route.layout;
         } else {
-            $scope.layoutTemplate = 'clientLayout.html';
+            $scope.layoutTemplate = 'client.html';
         }
     });
 });
