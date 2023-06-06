@@ -46,6 +46,10 @@ app.config(function ($routeProvider, $locationProvider) {
         .when('/admin', {
             layout: './pages/admin/admin.html'
         })
+        .when('/admin/list', {
+            // templateUrl: './pages/admin/listProduct.html',
+            layout:'./pages/admin/listProduct.html'
+        })
         .when('/404', {
             templateUrl: './pages/404.html',
         })
